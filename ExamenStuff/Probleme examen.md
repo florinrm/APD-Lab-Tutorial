@@ -1,7 +1,7 @@
 # Probleme date în trecut la examene
 1) Avem un graf conex oarecare, un nod v și lista lui de vecini. Să se afle nodul maxim (adică nodul cu numărul cel mai mare de vecini din graf), folosind un algoritm distribuit de tip undă.
 
-Soluție: aflăm topologia grafului folosind algoritmul sondă-ecou (forma generală), apoi, după ce aflăm topologia grafului, vedem care este nodul maxim
+**Soluție**: aflăm topologia grafului folosind algoritmul sondă-ecou (forma generală), apoi, după ce aflăm topologia grafului, vedem care este nodul maxim
 ```
 typedef enum {sonda, ecou} fel;
 typedef tip_leg bool[1:n];
