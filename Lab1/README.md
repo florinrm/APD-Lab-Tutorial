@@ -53,7 +53,7 @@ pthread_mutex_unlock(&mutex);
 Tot pentru sincronizarea thread-urilor putem folosi bariera.
 
 // insert imagine cu bariera
-
+Pentru exemplificare vedeți fișierul barrier.c, compilați-l cu make și rulați de mai multe ori ./barrier
 ```c
 void* printWithBarrier (void* var) {
     int id = *(int *) var;
