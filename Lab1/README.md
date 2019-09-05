@@ -32,7 +32,7 @@ for (int i = 0; i < NO_THREADS; ++i)
     pthread_join(another_threads[i], NULL);
 ```
 
-## Mutex
+## Mutex - `pthread_mutex_t`
 Thread-urile pot să partajeze date (variabile) între ele, pe care să aplice operații. Această chestie ne ridică uneori probleme de sincronizare între thread-uri, deoarece putem să nu avem mereu rezultatul dorit.
 
 Pentru sincronizarea thread-urilor care operează pe date partajate folosim mutex, care permite unui singur thread la un moment dat să opereze în zona respectivă de cod cu date partajate (zona critică).
@@ -49,7 +49,7 @@ pthread_mutex_lock(&mutex);
 // thread-ul iese din zona critică
 pthread_mutex_unlock(&mutex);
 ```
-## Barieră
+## Barieră - `pthread_barrier_t`
 Tot pentru sincronizarea thread-urilor putem folosi bariera.
 
 // insert imagine cu bariera
