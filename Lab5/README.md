@@ -38,3 +38,7 @@ class MyRunnable implements Runnable {
     }
 }
 ```
+## Synchronized
+Cu keyword-ul `synchronized` putem folosi lock-uri / mutecși în Java.
+
+## Volatile
