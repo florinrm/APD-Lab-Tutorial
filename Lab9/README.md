@@ -16,3 +16,6 @@ Până acum ați lucrat cu thread-uri în  C și Java.
 ### Broadcast
 ### Scatter
 ### Gather
+
+## Utile
+[Tutoriale MPI](https://mpitutorial.com/tutorials/)
