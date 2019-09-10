@@ -37,7 +37,14 @@ Până acum ați lucrat cu thread-uri în  C și Java.
 - tag = tag-ul mesajului primit (adica al datelor primite)
 - communicator = comunicatorul (de regulă MPI_COMM_WORLD)
 - status = starea (de regulă se pune MPI_STATUS_IGNORE - se ignoră status-ul)
-### Broadcast
+### Broadcast - `MPI_Bcast(void* data, int count, MPI_Datatype datatype, int root, MPI_Comm communicator)`
+- Un proces trimite aceleasi date tuturor proceselor din topologie (inclusiv lui insusi).
+
+- data = datele trimise
+- count = numarul de date trimise
+- datatype = tipul datelor trimise
+- root = id-ul procesului sursa
+- communicator = comunicatorul (de regulă MPI_COMM_WORLD)
 ### Scatter
 ### Gather
 
