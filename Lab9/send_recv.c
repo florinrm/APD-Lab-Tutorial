@@ -4,9 +4,12 @@
 int main (int argc, char **argv) {
     int rank, proc;
     
+    // initializam procesele
     MPI_Init(&argc, &argv);
     
+    // fiecare proces are un rank
     MPI_Comm_rank(MPI_COMM_WORLD, &rank); // rank
+    // stabilim numarul de procese
     MPI_Comm_size(MPI_COMM_WORLD, &proc);
 
     // send si receive
@@ -23,6 +26,7 @@ int main (int argc, char **argv) {
         printf ("Process no. %d got value %d\n\n", rank, a);
     }
 
+    // un process trimite informatia celorlaltor n - 1 procese
     if (rank == 0) {
         int a = 420;
         for (int i = 1; i < proc; ++i)
