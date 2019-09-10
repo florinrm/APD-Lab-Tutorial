@@ -1,1 +1,2 @@
 # Recapitulare
+## OpenMP
