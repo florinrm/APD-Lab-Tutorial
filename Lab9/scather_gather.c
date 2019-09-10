@@ -3,8 +3,30 @@
 
 #define ROOT 0
 
+const int chunks_per_process = 5; // numarul de elemente per proces
+
+int* create_array (int size) {
+    int* arr = (int*) malloc (size * sizeof(int));
+    
+    for (int i = 0; i < size; ++i) {
+        arr[i] = i + 1;
+    }
+
+    return arr;
+}
+
+int* increaseEveryElement (int* arr, int size) {
+    for (int i = 0; i < size; ++i) {
+        arr[i]++;
+    }
+
+    return arr;
+}
+
 int main (int argc, char **argv) {
     int rank, proc, a;
+
+    int* arr;
     
     // initializam procesele
     MPI_Init(&argc, &argv);
@@ -16,12 +38,8 @@ int main (int argc, char **argv) {
 
     // procesul root seteaza valoarea lui a
     if (rank == ROOT) {
-        a = 69;
-        printf("Value %d was broadcast by the process no. %d\n", a, rank);
+        arr = create_array(chunks_per_process * proc);
     }
-
-    // facem broadcast de la procesul zero pana la restul proceselor
-    MPI_Bcast(&a, 1, MPI_INT, ROOT, MPI_COMM_WORLD);
 
     printf("Process no. %d got value %d\n", rank, a);
 
