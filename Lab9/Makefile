@@ -14,7 +14,7 @@ run_broadcast:
 	mpirun -np 6 broadcast
 
 run_scather_gather:
-	mpirun -np 6 broscather_gatheradcast
+	mpirun -np 6 scather_gather
 
 clean:
-	rm send_recv ring
+	rm send_recv ring scather_gather broadcast
