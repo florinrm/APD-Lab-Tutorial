@@ -6,6 +6,10 @@ Până acum ați lucrat cu thread-uri în  C și Java.
 | MPI_SHORT            | short              |
 | MPI_INT              | int                |
 | MPI_LONG             | long               |
+| MPI_LONG_LONG        | long long             |
+| MPI_UNSIGNED_CHAR    | unsigned char          |
+| MPI_UNSIGNED_SHORT   | un       |
+| MPI_UNSIGNED         | long               |
 ## Funcții MPI
 ### Init - `MPI_Init(int *argc, char ***argv)`
 - Construiește environment-ul în care procesele se vor rula
@@ -45,8 +49,26 @@ Până acum ați lucrat cu thread-uri în  C și Java.
 - datatype = tipul datelor trimise
 - root = id-ul procesului sursă
 - communicator = comunicatorul (de regulă MPI_COMM_WORLD)
-### Scatter
-### Gather
+### Scatter - `MPI_Scatter(void* send_data, int send_count, MPI_Datatype send_datatype, void* recv_data, int recv_count, MPI_Datatype recv_datatype, int root, MPI_Comm communicator)`
+- Un proces trimite câte o bucată dintr-un array / colecție tuturor proceselor în parte, inclusiv lui însuși (fiecare proces cu bucata sa din array).
+- send_data = datele trimise
+- send_datatype = tipul datelor trimise (de regulă recv_datatype == send_datatype)
+- send_count = numărul de date trimise fiecărui proces în parte (de regulă recv_count == send_count)
+- recv_data = datele primite
+- recv_count = numărul de date primite de fiecare proces în parte (de regulă recv_count == send_count)
+- recv_datatype = tipul datelor recepționate (de regulă recv_datatype == send_datatype)
+- root = id-ul procesului sursă
+- communicator = comunicatorul (de regulă MPI_COMM_WORLD)
+### Gather - `MPI_Gather(void* send_data, int send_count, MPI_Datatype send_datatype, void* recv_data, int recv_count, MPI_Datatype recv_datatype, int root, MPI_Comm communicator)`
+- Un proces primește câte o bucată dintr-un array / colecție de la toate procesele, inclusiv de la însuși (fiecare proces cu bucata sa din array) - reprezintă inversul lui Scatter.
+- send_data = datele trimise
+- send_datatype = tipul datelor trimise (de regulă recv_datatype == send_datatype)
+- send_count = numărul de date trimise fiecărui proces în parte (de regulă recv_count == send_count)
+- recv_data = datele primite
+- recv_count = numărul de date primite de fiecare proces în parte (de regulă recv_count == send_count)
+- recv_datatype = tipul datelor recepționate (de regulă recv_datatype == send_datatype)
+- root = id-ul procesului destinație
+- communicator = comunicatorul (de regulă MPI_COMM_WORLD)
 
 ## Utile
 [Tutoriale MPI](https://mpitutorial.com/tutorials/)
