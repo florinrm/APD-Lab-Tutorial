@@ -43,3 +43,6 @@ Cu keyword-ul `synchronized` putem folosi lock-uri / mutecși în Java.
 
 ## Volatile
 Cu ajutorul keyword-ului `volatile`, un thread poate vedea schimbările efectuate asupra unei variabile de către alt thread și să țină cont de aceste schimbări.
+
+### Referințe - Java multithreading
+[Concepte din Java multithreading explicate](http://tutorials.jenkov.com/java-concurrency/index.html)
