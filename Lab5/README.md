@@ -42,3 +42,4 @@ class MyRunnable implements Runnable {
 Cu keyword-ul `synchronized` putem folosi lock-uri / mutecși în Java.
 
 ## Volatile
+Cu ajutorul keyword-ului `volatile`, un thread poate vedea schimbările efectuate asupra unei variabile de către alt thread și să țină cont de aceste schimbări.
