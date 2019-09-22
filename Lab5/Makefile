@@ -10,5 +10,8 @@ demoRunnable:
 demoVolatile:
 	java DemoVolatile
 
+demoSynchronized:
+	java DemoSynchronized
+
 clean:
 	rm *.class
