@@ -16,3 +16,17 @@
 - reprezinta o implementare de MPI_Isend-MPI_Irecv, folosind MPI_Wait, unde un proces trimite date altui proces
 ### `MPI_Ssend(const void *buf, int count, MPI_Datatype datatype, int dest, int tag, MPI_Comm comm)`
 - versiune blocanta si sincronizata de send. Aici, un proces trimite informatii altui proces, care trimite o confirmare catre primul proces legata de receptionarea datelor (este nevoie de confirmare pentru a se continua trimiterea datelor).
+## Alegere lider
+- de regula, se alege ca lider nodul cu valoarea maxima
+```c
+// {node, vecin} -  asa vine perechea in matrice
+// atatea noduri = atatea procese (un nod = un proces)
+for (int i = 0; i < nr_procese; i++) {
+	for (int j = 0; j < edges; j++) {
+		nodul trimite liderul sau local tuturor vecinilor sai
+		el primeste liderul local vecinilor sai (HINT: MPI_ANY_SOURCE)
+		compara liderul sau cu liderul de la vecini si decide
+  }
+}
+
+```
